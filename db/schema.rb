@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151006231254) do
   create_table "kanban_boards", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.boolean  "public_visible", default: true
+    t.boolean  "public_visible", default: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
