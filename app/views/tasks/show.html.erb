@@ -1,0 +1,30 @@
+<p id="notice">
+  <%= notice %>
+</p>
+<p>
+  <strong>Kanban board:</strong>
+  <%= @task.kanban_board %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+<p>
+  <strong>Priority:</strong>
+  <%= @task.priority %>
+</p>
+<p>
+  <strong>Current status:</strong>
+  <%= @task.current_status %>
+</p>
+<p>
+  <strong>Deleted:</strong>
+  <%= @task.deleted %>
+</p>
+<p>
+  <strong>Hidden:</strong>
+  <%= @task.hidden %>
+</p>
+<%= link_to 'Edit', edit_task_path(@task) %>
+|
+<%= link_to 'Back', tasks_path %>
