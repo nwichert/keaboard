@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails keaboard: development" uuid="0b03377b-d1a8-4823-b972-500a9def9e85">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails keaboard: test" uuid="b3db65ba-dfbb-4b7e-9ad4-a92aba9177b5">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
