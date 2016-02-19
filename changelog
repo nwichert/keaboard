@@ -1,0 +1,42 @@
+201510022259
+
+Rails 4.2 project creation without turbolinks
+
+201510022259
+
+Adding Haml, Sass and Devise Gem on Gemfile
+
+201510031138
+
+Installing Devise
+
+201510031142
+
+Adding haml Devise views 
+
+201510031156
+
+Adding kanban_board model scaffold
+
+201510031208
+
+Converting kanban_board views to haml
+Setting kanban_board#index as root_url
+
+201510031258
+
+Configuring bootstrap-sass
+Adding navbar partial
+
+201510031337
+
+Setting stick footer
+Setting bootstrap tables on kanban
+
+201510031827
+
+Adding task model and relationships with KanbanBoard model
+
+201510031848
+
+Adding Devise model User

@@ -1,0 +1,45 @@
+<%= form_for(@task, url: kanban_board_tasks_path) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@task.errors.count, "error") %>
+        prohibited this task from being saved:
+      </h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %>
+    <br/>
+    <% @task.default_priorities.each do |priority| %>
+      <%= f.radio_button(:priority, priority) %>
+      <span class="label-<%= task_class_by_priority(priority) %> label">
+        <%= priority %>
+      </span>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :current_status %>
+    <br/>
+    <% @kanban_board.default_columns.each do |status| %>
+      <%= f.radio_button(:current_status, status) %>
+      <span class="label label-default">
+        <%= t "activerecord.attributes.kanban_board.#{status}" %>
+      </span>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

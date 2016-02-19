@@ -1,0 +1,44 @@
+<div class="row">
+  <h1>
+    <%= @kanban_board.title %>
+  </h1>
+  <p>
+    <i>
+      <%= @kanban_board.description %>
+    </i>
+  </p>
+  <% @kanban_board.default_columns.each do |col| %>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <%= t "activerecord.attributes.kanban_board.#{col}" %>
+            <button class="btn btn-link btn-sm pull-right" data-placement="top" data-status="<%= col %>" data-target-modal="#new-task-modal" data-toggle="tooltip" title="New task" type="button">
+              <%= icon("plus-square") %>
+            </button>
+          </div>
+        </div>
+        <div class="panel-body task-droppable sortable-panel" data-status="<%= col %>">
+          <br/>
+          <% @kanban_board.tasks.of_status(col).each do |task| %>
+            <div class="panel-<%= task_class_by_priority(task.priority) %> panel task-draggable" data-id="<%= task.id %>" data-kind="Task">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <%= task.title %>
+                  <%= link_to kanban_board_task_path(@kanban_board,task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <%= icon("trash", class: "pull-right") %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <!--render tasks with that status
+          -->
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render "tasks/modal" %>
+<%= render text: File.read("#{Rails.root}/app/views/shared/_task_underscore_template.html").html_safe %>
+<%= render text: File.read("#{Rails.root}/app/views/shared/_task_errors_template.html").html_safe %>

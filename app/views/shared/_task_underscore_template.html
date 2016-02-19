@@ -1,0 +1,23 @@
+<script type="text/template" id="task-template">
+  <%
+    var priorityXRef = {
+          "low": "success",
+          "regular": "primary",
+          "medium": "default",
+          "high": "warning",
+          "critical": "danger"
+       };
+    var priority = data.priority;
+    priority = priorityXRef[priority];
+  %>
+  <div class="panel panel-<%= priority %> task-draggable" data-id="<%= data.id %>" data-kind="Task">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <%= data.title %>
+        <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/kanban_boards/<%= data.kanban_board_id %>/tasks/<%= data.id %>">
+          <i class="fa fa-trash pull-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</script>
