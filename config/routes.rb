@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+<<<<<<< HEAD
   root to: 'welcome#index'
+=======
+  # root 'kanban_boards#index'
+  root 'welcome#index'
+>>>>>>> 70740618880882cc193c5cded4e42b912f55dedb
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
